@@ -21,7 +21,7 @@ class Gui:
         self.root.title("ISS Tracker")
         sv_ttk.set_theme("dark")
 
-        self.label = ttk.Label(self.root, text="ISS Location", font=("Arial", 14))
+        self.label = ttk.Label(self.root, text="ISS Location", font=("Arial", 16))
         self.label.pack(pady=10)
 
     def header_stats(self):
@@ -29,12 +29,14 @@ class Gui:
         stats_frame.pack(pady=10)
 
         self.speed_label = ttk.Label(
-            stats_frame, text=f"Speed: {self.iss.speed():.2f} km/s"
+            stats_frame, text=f"Speed: {self.iss.speed():.2f} km/s", font=("Arial", 14)
         )
         self.speed_label.grid(row=0, column=0, padx=5)
 
         self.altitude_label = ttk.Label(
-            stats_frame, text=f"Altitude: {self.iss.distance():.2f} km"
+            stats_frame,
+            text=f"Altitude: {self.iss.distance():.2f} km",
+            font=("Arial", 14),
         )
         self.altitude_label.grid(row=0, column=1, padx=5)
 
